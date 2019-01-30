@@ -11,6 +11,9 @@ class GamesController < ApplicationController
   end
 
   def update
+    @game = Game.find(params[:id])
+    @game.update(game_params)
+    render json:@game.to_json
   end
 
   def index
